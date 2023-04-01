@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33423.256
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial2_GameSim", "Parcial2_GameSim\Parcial2_GameSim.csproj", "{020039D0-97FA-45ED-AAFA-BEF55F011853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{DC545395-279A-430C-B8FA-31A8E6219186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020039D0-97FA-45ED-AAFA-BEF55F011853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020039D0-97FA-45ED-AAFA-BEF55F011853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020039D0-97FA-45ED-AAFA-BEF55F011853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020039D0-97FA-45ED-AAFA-BEF55F011853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC545395-279A-430C-B8FA-31A8E6219186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC545395-279A-430C-B8FA-31A8E6219186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC545395-279A-430C-B8FA-31A8E6219186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC545395-279A-430C-B8FA-31A8E6219186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C824B5B-4FED-4880-BCE9-595BD2A890C9}
+	EndGlobalSection
+EndGlobal
