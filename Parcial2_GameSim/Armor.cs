@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Parcial2_GameSim
 {
-    internal class Weapon
+    internal class Armor
     {
-
         private string name = "";
         private uint power = 1;
         private uint durability = 1;
