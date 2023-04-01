@@ -13,7 +13,7 @@ namespace Parcial2_GameSim
         private int atk = 0;
         private int def = 0;
 
-        public enum Clase
+        public enum Class
         {
             Human,
             Beast,
@@ -25,4 +25,7 @@ namespace Parcial2_GameSim
         public int ATK { get => atk; set => atk = value; }
         public int DEF { get => def; set => def = value; }
     }
+
+
+    
 }
