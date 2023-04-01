@@ -22,8 +22,30 @@ namespace Parcial2_GameSim
         }
 
         public string Name { get => name; set => name = value; }
-        public uint Power { get => power; set => power = value; }
-        public uint Durability { get => durability; set => durability = value; }
+        public uint Power
+        {
+            get => power;
+            set
+            {
+                if (value > 0)
+                {
+                    power = value;
+                }
+            }
+
+        }
+        public uint Durability
+        {
+            get => durability;
+            set
+            {
+                if (value > 0)
+                {
+                    durability = value;
+                }
+            }
+
+        }
 
     }
 }

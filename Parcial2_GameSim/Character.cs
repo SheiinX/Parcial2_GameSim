@@ -23,13 +23,37 @@ namespace Parcial2_GameSim
         }
 
         public string Name { get => name; set => name = value; }
-        public uint HP { get => hp; set => hp = value; }
+        public uint HP 
+        { 
+            get => hp;
+            set
+            {
+                if (value > 0)
+                {
+                    hp = value;
+                }
+            }
+                
+        }
+
         public uint ATK { get => atk; set => atk = value; }
         public uint DEF { get => def; set => def = value; }
 
+        //public int AssigningClass(Class class)
+        //{
+
+        //}
+
         public void EquipWeapon(Weapon weaponEq)
         {
-            weapon = weaponEq;
+            if (weaponEq == null) return;
+
+            if ((int)Weapon.WeaponClass.Human == (int)Class.Human)
+            {
+                weapon = weaponEq;
+            }  
+           
+
         }
 
         public void EquipArmor(Armor armorEq)
