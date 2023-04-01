@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2_GameSim
 {
-    internal class Character
+    public class Character : ICommonFunc
     {
         private string name = "";
         private int hp = 1;

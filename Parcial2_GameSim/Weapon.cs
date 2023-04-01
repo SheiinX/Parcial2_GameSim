@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2_GameSim
 {
-    internal class Weapon
+    public class Weapon : ICommonFunc
     {
 
         private string name = "";

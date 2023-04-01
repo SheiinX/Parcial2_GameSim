@@ -1,4 +1,6 @@
 using NUnit.Framework;
+using System.Collections.Generic;
+using Parcial2_GameSim;
 
 namespace TestProject
 {
@@ -10,7 +12,7 @@ namespace TestProject
         {
             // Arrange
             var character = new Character("Jaime", 100, 10, "Human");
-            var weapon = new Weapon("Sword", 10, "Human", 10);
+            var weapon = new Weapon("Sword", 10, 10, "Human");
 
             // Act
             character.EquipWeapon(weapon);
@@ -24,13 +26,13 @@ namespace TestProject
         {
             // Arrange
             var character = new Character("Jaime", 100, 10, "Human");
-            var armor = new Armor("Leather Armor", 5, "Human");
+            var armor = new Armor("Leather Armor", 5, 5, "Human");
 
             // Act
             character.EquipArmor(armor);
 
             // Assert
-            Assert.AreEqual(armor, character.Armor);
+            Assert.AreEqual(armor, character.armor);
         }
 
         [Test]

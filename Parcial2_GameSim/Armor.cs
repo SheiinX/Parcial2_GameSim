@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parcial2_GameSim
 {
-    internal class Armor
+    public class Armor : ICommonFunc
     {
         private string name = "";
         private int power = 1;
