@@ -9,13 +9,15 @@ namespace Parcial2_GameSim
     internal class Character
     {
         private string name = "";
-        private uint hp = 1;
-        private uint atk = 0;
-        private uint def = 0;
-        Weapon weapon = new Weapon();
-        Armor armor = new Armor();
+        private int hp = 1;
+        private int atk = 0;
+        private int def = 0;
+        //private int classChar = 0;
+        private string classChar = "";
+        Weapon weapon;
+        Armor armor;
 
-        public enum Class
+        internal enum EClass
         {
             Human,
             Beast,
@@ -23,7 +25,7 @@ namespace Parcial2_GameSim
         }
 
         public string Name { get => name; set => name = value; }
-        public uint HP 
+        public int HP 
         { 
             get => hp;
             set
@@ -36,34 +38,86 @@ namespace Parcial2_GameSim
                 
         }
 
-        public uint ATK { get => atk; set => atk = value; }
-        public uint DEF { get => def; set => def = value; }
+        public int ATK { get => atk; set => atk = value; }
+        public int DEF { get => def; set => def = value; }
+        public string ClassChar { get => classChar; set => classChar = value; }
 
-        //public int AssigningClass(Class class)
-        //{
+        public Character(string name, int hp, int atk, int def, string classChar)
+        {
+            Name = name;
+            HP = hp;
+            ATK = atk;
+            DEF = def;
+            ClassChar = AssigningClass(classChar);
+        }
 
-        //}
+        public string AssigningClass(string eClass)
+        {
+            EClass classHuman = EClass.Human;
+            EClass classBeast = EClass.Beast;
+            EClass classHybrid = EClass.Hybrid;
+
+            if (eClass == classHuman.ToString())
+            {
+                return classHuman.ToString();
+            }
+            else if(eClass == classBeast.ToString())
+            {
+                return classBeast.ToString();
+            }
+            else if (eClass == classHybrid.ToString())
+            {
+                return classHybrid.ToString();
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public void EquipWeapon(Weapon weaponEq)
         {
-            if (weaponEq == null) return;
-
-            if ((int)Weapon.WeaponClass.Human == (int)Class.Human)
+            do
             {
-                weapon = weaponEq;
-            }  
-           
-
+                if (weaponEq.ClassWeapon == ClassChar)
+                {
+                    weapon = weaponEq;
+                }
+                else if (weaponEq.ClassWeapon == "Any")
+                {
+                    weapon = weaponEq;
+                }
+                else
+                {
+                    break;
+                }
+            } 
+            while (weapon == null);
         }
 
         public void EquipArmor(Armor armorEq)
         {
-            armor = armorEq;
+            do
+            {
+                if (armorEq.ClassArmor == ClassChar)
+                {
+                    armor = armorEq;
+                }
+                else if (armorEq.ClassArmor == "Any")
+                {
+                    armor = armorEq;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            while (armor == null);
         }
 
-        public uint DamageReceive(Character character)
+        public int DamageReceive(Character character)
         {
-            uint TotalDamage = character.weapon.Power;
+            int TotalDamage = character.weapon.Power;
 
             if (armor != null)
             {

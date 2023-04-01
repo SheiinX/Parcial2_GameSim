@@ -10,10 +10,11 @@ namespace Parcial2_GameSim
     {
 
         private string name = "";
-        private uint power = 1;
-        private uint durability = 1;
+        private int power = 1;
+        private int durability = 1;
+        private string classWeap = "";
 
-        public enum WeaponClass
+        public enum EWeaponClass
         {
             Human,
             Beast,
@@ -22,7 +23,7 @@ namespace Parcial2_GameSim
         }
 
         public string Name { get => name; set => name = value; }
-        public uint Power
+        public int Power
         {
             get => power;
             set
@@ -34,7 +35,7 @@ namespace Parcial2_GameSim
             }
 
         }
-        public uint Durability
+        public int Durability
         {
             get => durability;
             set
@@ -45,6 +46,45 @@ namespace Parcial2_GameSim
                 }
             }
 
+        }
+
+        public string ClassWeapon { get => classWeap; set => classWeap = value; }
+
+        public Weapon(string name, int power, int durability, string classW)
+        {
+            Name = name;
+            Power = power;
+            Durability = durability;
+            ClassWeapon = AssigningClass(classW);
+        }
+
+        public string AssigningClass(string weaponClass)
+        {
+            EWeaponClass classHuman = EWeaponClass.Human;
+            EWeaponClass classBeast = EWeaponClass.Beast;
+            EWeaponClass classHybrid = EWeaponClass.Hybrid;
+            EWeaponClass classAny = EWeaponClass.Any;
+
+            if (weaponClass == classHuman.ToString())
+            {
+                return classHuman.ToString();
+            }
+            else if (weaponClass == classBeast.ToString())
+            {
+                return classBeast.ToString();
+            }
+            else if (weaponClass == classHybrid.ToString())
+            {
+                return classHybrid.ToString();
+            }
+            else if (weaponClass == classAny.ToString())
+            {
+                return classAny.ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
