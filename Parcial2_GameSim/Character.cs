@@ -11,7 +11,7 @@ namespace Parcial2_GameSim
         private string name = "";
         private int hp = 1;
         private int atk = 0;
-        private int def = 0;
+        //private int def = 0;
         //private int classChar = 0;
         private string classChar = "";
         Weapon weapon;
@@ -39,15 +39,15 @@ namespace Parcial2_GameSim
         }
 
         public int ATK { get => atk; set => atk = value; }
-        public int DEF { get => def; set => def = value; }
+        //public int DEF { get => def; set => def = value; }
         public string ClassChar { get => classChar; set => classChar = value; }
 
-        public Character(string name, int hp, int atk, int def, string classChar)
+        public Character(string name, int hp, int atk, /*int def,*/ string classChar)
         {
             Name = name;
             HP = hp;
             ATK = atk;
-            DEF = def;
+            //DEF = def;
             ClassChar = AssigningClass(classChar);
         }
 
@@ -82,10 +82,12 @@ namespace Parcial2_GameSim
                 if (weaponEq.ClassWeapon == ClassChar)
                 {
                     weapon = weaponEq;
+                    ATK += weapon.Power;
                 }
                 else if (weaponEq.ClassWeapon == "Any")
                 {
                     weapon = weaponEq;
+                    ATK += weapon.Power;
                 }
                 else
                 {
@@ -117,42 +119,100 @@ namespace Parcial2_GameSim
 
         public int DamageReceive(Character character)
         {
-            int TotalDamage = character.weapon.Power;
+            int totalDamage = character.ATK;
+            int temporalHp = HP;
 
             if (armor != null)
             {
-                armor.Durability -= TotalDamage;
-
-                if(armor.Durability == 0)
+                if(character.weapon != null)
                 {
-                    armor = null;
-                    return 0;
+                    armor.Durability = totalDamage / 2;
+
+                    if (armor.Durability <= 0)
+                    {
+                        armor = null;
+                        return 0;
+                    }
+                    else
+                    {
+                        return armor.Durability;
+                    }
                 }
                 else
                 {
-                    return armor.Durability;
+                    if(totalDamage == 0)
+                    {
+                        armor.Durability -= 1;
+
+                        if (armor.Durability <= 0)
+                        {
+                            armor = null;
+                            return 0;
+                        }
+                        else
+                        {
+                            return armor.Durability;
+                        }
+                    }
+                    else
+                    {
+                        armor.Durability = totalDamage / 2;
+
+                        if (armor.Durability <= 0)
+                        {
+                            armor = null;
+                            return 0;
+                        }
+                        else
+                        {
+                            return armor.Durability;
+                        }
+                    }
+                    
                 }
-                
+
             }
             else
             {
-                hp -= TotalDamage;
-                bool alive = IsAlive();
-
-                if(alive == true)
+                temporalHp -= totalDamage;
+                
+                if(temporalHp < 0)
                 {
-                    return hp;
+                    HP = 0;
+                    return HP;
                 }
                 else
                 {
-                    return 0;
+                    HP -= totalDamage;
+                    return HP;
                 }
             }
         }
 
+        public int DamageInflicted()
+        {
+            if(weapon != null)
+            {
+                weapon.Durability -= 1;
+                if(weapon.Durability <= 0)
+                {
+                    weapon = null;
+                    return 0;
+                }
+                else
+                {
+                    return weapon.Durability;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        /*
         public bool IsAlive()
         {
-            if(hp != 0)
+            if(hp > 0)
             {
                 return true;
             }
@@ -160,6 +220,6 @@ namespace Parcial2_GameSim
             {
                 return false;
             }
-        }
+        }*/
     }
 }
