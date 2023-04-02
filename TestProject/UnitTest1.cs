@@ -1,12 +1,28 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using Parcial2_GameSim;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TestProject
 {
     [TestFixture]
     public class CharacterTests
     {
+        private Character testChar;
+        private Weapon testWeapon;
+        private Armor testArmor;
+
+        [SetUp]
+        public void SetUp()
+        {
+            testChar = new Character("TestChar", 10, 2, "Human");
+            testWeapon = new Weapon("TestWeapon", 2, 10, "Human");
+            testArmor = new Armor("TestArmor", 2, 10, "Human");
+        }
+
         [Test]
         public void EquipWeapon_ShouldIncreaseCharacterATK()
         {
@@ -63,6 +79,14 @@ namespace TestProject
 
             // Assert
             Assert.AreEqual(9, character1.weapon.Durability);
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            testChar = null;
+            testWeapon = null;
+            testArmor = null;
         }
     }
 }
