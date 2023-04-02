@@ -77,7 +77,7 @@ namespace Parcial2_GameSim
 
         public void EquipWeapon(Weapon weaponEq)
         {
-            do
+            if (weapon == null)
             {
                 if (weaponEq.ClassWeapon == ClassChar)
                 {
@@ -89,17 +89,18 @@ namespace Parcial2_GameSim
                     weapon = weaponEq;
                     ATK += weapon.Power;
                 }
-                else
-                {
-                    break;
-                }
-            } 
-            while (weapon == null);
+            }
+            else
+            {
+                ATK -= weapon.Power;
+                weapon = weaponEq;
+                ATK += weapon.Power;
+            }
         }
 
         public void EquipArmor(Armor armorEq)
         {
-            do
+            if (armor == null)
             {
                 if (armorEq.ClassArmor == ClassChar)
                 {
@@ -109,12 +110,12 @@ namespace Parcial2_GameSim
                 {
                     armor = armorEq;
                 }
-                else
-                {
-                    break;
-                }
             }
-            while (armor == null);
+            else
+            {
+                armor = null;
+                armor = armorEq;
+            }
         }
 
         public int DamageReceive(Character character)
@@ -126,7 +127,7 @@ namespace Parcial2_GameSim
             {
                 if(character.weapon != null)
                 {
-                    armor.Durability = totalDamage / 2;
+                    armor.Durability -= totalDamage / 2;
 
                     if (armor.Durability <= 0)
                     {

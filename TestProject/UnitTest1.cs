@@ -52,6 +52,27 @@ namespace TestProject
         }
 
         [Test]
+        public void EquipArmor_ShouldChangeCharacterArmorWithAlreadyArmor()
+        {
+            // Arrange
+            var character = new Character("Jaime", 100, 10, "Human");
+            var armor1 = new Armor("Leather Armor", 5, 5, "Human");
+            var armor2 = new Armor("Iron Armor", 5, 10, "Human");
+
+            // Act
+            character.EquipArmor(armor1);
+
+            // Assert
+            Assert.AreEqual(armor1, character.armor);
+
+            //Act
+            character.EquipArmor(armor2);
+
+            //Assert
+            Assert.AreEqual(armor2, character.armor);
+        }
+
+        [Test]
         public void DamageReceive_ShouldReduceCharacterHP()
         {
             // Arrange
@@ -81,6 +102,23 @@ namespace TestProject
             Assert.AreEqual(9, character1.weapon.Durability);
         }
 
+        [Test]
+        public void DamageReceived_ShouldReduceArmorDurability()
+        {
+            // Arrange
+            var character1 = new Character("Jaime", 100, 10, "Human");
+            var character2 = new Character("Bob", 100, 10, "Human");
+            var armor1 = new Armor("Iron Armor", 5, 20, "Human");
+
+            // Act
+            character2.EquipWeapon(new Weapon("Sword", 10, 10, "Human"));
+            character1.EquipArmor(armor1);
+            character1.DamageReceive(character2);
+
+            // Assert
+            Assert.AreEqual(10, character1.armor.Durability);
+        }
+    
         [TearDown]
         public void TearDown()
         {
