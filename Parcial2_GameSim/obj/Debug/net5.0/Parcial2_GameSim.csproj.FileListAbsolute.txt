@@ -1,0 +1,16 @@
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.exe
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.deps.json
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.runtimeconfig.json
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.runtimeconfig.dev.json
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.dll
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\bin\Debug\net5.0\Parcial2_GameSim.pdb
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.csproj.AssemblyReference.cache
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.AssemblyInfoInputs.cache
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.AssemblyInfo.cs
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.csproj.CoreCompileInputs.cache
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.dll
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\refint\Parcial2_GameSim.dll
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.pdb
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\Parcial2_GameSim.genruntimeconfig.cache
+C:\Users\jmigu\Documents\GitHub\Parcial2_GameSim\Parcial2_GameSim\obj\Debug\net5.0\ref\Parcial2_GameSim.dll

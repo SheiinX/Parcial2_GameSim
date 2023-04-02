@@ -41,13 +41,13 @@ namespace TestProject
             // Arrange
             var character1 = new Character("Jaime", 100, 10, "Human");
             var character2 = new Character("Bob", 100, 10, "Human");
-            character2.EquipWeapon(new Weapon("Sword", 10, "Human", 10));
+            character2.EquipWeapon(new Weapon("Sword", 10, 10,"Human"));
 
             // Act
             character1.DamageReceive(character2);
 
             // Assert
-            Assert.AreEqual(90, character1.HP);
+            Assert.AreEqual(80, character1.HP);
         }
 
         [Test]
@@ -56,13 +56,13 @@ namespace TestProject
             // Arrange
             var character1 = new Character("Jaime", 100, 10, "Human");
             var character2 = new Character("Bob", 100, 10, "Human");
-            character1.EquipWeapon(new Weapon("Sword", 10, "Human", 10));
+            character1.EquipWeapon(new Weapon("Sword", 10, 10, "Human"));
 
             // Act
-            character1.Attack(character2);
+            character1.DamageInflicted();
 
             // Assert
-            Assert.AreEqual(9, character1.Weapon.Durability);
+            Assert.AreEqual(9, character1.weapon.Durability);
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Parcial2_GameSim
         //private int def = 0;
         //private int classChar = 0;
         private string classChar = "";
-        Weapon weapon;
-        Armor armor;
+        public Weapon weapon;
+        public Armor armor;
 
         internal enum EClass
         {
